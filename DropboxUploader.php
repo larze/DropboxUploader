@@ -155,7 +155,14 @@ class DropboxUploader {
         if ($exception)
             throw $exception;
     }
-
+    
+    /**
+     * 
+     * This section allows someone to stay logged into dropbox
+     * Also uses request function
+     * 
+     * */  
+     
     protected function login() {
         $data  = $this->request(self::HTTPS_DROPBOX_COM_LOGIN);
         $token = $this->extractTokenFromLoginForm($data);
